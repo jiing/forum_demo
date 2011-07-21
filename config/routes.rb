@@ -3,9 +3,16 @@ ForumDemo::Application.routes.draw do
   devise_for :users
 
   resources :boards do
-    resources :posts
+     resources :posts
+   end
+
+  namespace :admin do
+    resources :boards do
+      resources :posts
+    end
   end
   
+ 
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
