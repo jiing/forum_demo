@@ -1,7 +1,7 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <b>Name:</b>
+  <b>Board Name:</b>
   <%= @board.name %>
 </p>
 <h1>Listing posts</h1>
@@ -18,8 +18,10 @@
 		<th><%= post.title %></th>
 		<th><%= post.content %></th>
 		<th><%= link_to 'Show', board_post_path(@board, post) %></th>
-		<th><%= link_to 'Edit', edit_board_post_path(@board, post) %></th>
-		<th><%= link_to 'Destroy',  board_post_path(@board, post), :confirm=>'Are you sure?', :method=> :delete %></th>
+		<% if current_user && post.user_id == current_user.id %>
+		  <th><%= link_to 'Edit', edit_board_post_path(@board, post) %></th>
+		  <th><%= link_to 'Destroy',  board_post_path(@board, post), :confirm=>'Are you sure?', :method=> :delete %></th>
+		<% end %>
 	</tr>
 	<% end %>
 </table>
