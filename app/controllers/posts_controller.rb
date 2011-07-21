@@ -33,7 +33,7 @@ class PostsController < ApplicationController
 
   # GET /posts/1/edit
   def edit
-    @post = current_user.posts.find(params[:id])
+    @post = @board.posts.find(params[:id])
   end
 
   # POST /posts

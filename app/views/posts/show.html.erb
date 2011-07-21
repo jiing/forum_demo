@@ -9,6 +9,10 @@
   <b>Content:</b>
   <%= @post.content %>
 </p>
+<% if @post.user_id == current_user.id %>
+   <%= link_to 'Edit', edit_board_post_path(@board,@post) %> |
+<% end %>
+
 <% if (current_user && current_user.is_admin) %>
 	<%= link_to 'A-Edit', edit_admin_board_post_path(@board, @post) %> |
 <% end %>

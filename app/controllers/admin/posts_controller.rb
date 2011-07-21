@@ -8,6 +8,10 @@ class Admin::PostsController < ApplicationController
   before_filter :find_board
   before_filter :authenticate_user!, :except=>[:index]
 
+  def edit
+     @post = @board.posts.find(params[:id])
+  end
+
   # PUT /posts/1
   # PUT /posts/1.xml
   def update
