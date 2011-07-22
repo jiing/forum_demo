@@ -15,5 +15,5 @@ normal_user.save!
 
 board = Board.create!(:name => "System Announcement")
 post = board.posts.build(:title => "First Post", :content => "This is a demo post")
-post.user_id = admin.id
+post.user = admin
 post.save!
