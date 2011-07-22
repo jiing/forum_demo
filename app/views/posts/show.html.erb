@@ -9,6 +9,11 @@
   <b>Content:</b>
   <%= @post.content %>
 </p>
+<p>
+<% if @post.excerpt_image %>
+  <%= image_tag @post.excerpt_image.url(:medium) %>
+<% end %>
+</p>
 <% if @post.user_id == current_user.id %>
    <%= link_to 'Edit', edit_board_post_path(@board,@post) %> |
 <% end %>

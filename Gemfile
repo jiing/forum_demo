@@ -10,6 +10,7 @@ gem 'spork'
 gem 'rspec'
 gem 'devise'
 gem 'will_paginate'
+gem 'paperclip'
 
 
 # Use unicorn as the web server
