@@ -9,6 +9,7 @@ gem 'sqlite3'
 gem 'spork'
 gem 'rspec'
 gem 'devise'
+gem 'will_paginate'
 
 
 # Use unicorn as the web server
