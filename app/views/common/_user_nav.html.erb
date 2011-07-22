@@ -3,7 +3,7 @@
 	  Hi, <%= current_user.email %>
 	  <%= link_to 'Sign out',  destroy_user_session_path, :method=>'delete' %>
 	  <% if current_user.is_admin %>
-	    <%= link_to 'Admin Panel', admin_boards_path %>
+	    <%= link_to 'Admin Panel', boards_path %>
 	  <% end %>
 	<% else %>
 	  <%= link_to 'Sign in', new_user_session_path %>
